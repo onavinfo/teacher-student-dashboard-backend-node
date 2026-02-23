@@ -59,6 +59,7 @@ io.on("connection", (socket) => {
     socket.join(conversationId);
     console.log(`Socket ${socket.id} joined room ${conversationId}`);
   });
+// console.log("helllo ji");
 
   socket.on("message_saved", ({ conversationId, message }) => {
     io.to(String(conversationId)).emit("new_message", message);
